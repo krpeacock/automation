@@ -110,7 +110,8 @@ exec(`npm run prettier:format`, (error) => {
   }
 
   exec(
-    'git add .; git commit -m "Releases v' + newVersion + "; git push",
+    // prettier-ignore
+    'git add .; git commit -m \"Releases v' + newVersion + '\"; git push',
     (error) => {
       if (error) {
         throw new Error(JSON.stringify(error));
