@@ -37,4 +37,4 @@ jobs:
       # - run: npm whoami
       # publish to NPM -> there is one caveat, continue reading for the fix
       - run: npm run version -- ${GITHUB_REF#refs/tags/v}
-      - run: git add .; git commit -m "Releases ${GITHUB_REF#refs/tags/v}"; git push;
+      - run: git add .; git commit -m "Releases ${GITHUB_REF#refs/tags/v}"; git push origin HEAD:main;
