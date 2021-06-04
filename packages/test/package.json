@@ -1,1 +1,1 @@
-{"name":"test","version":"0.0.8-beta.7","description":"","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1","build":""},"keywords":[],"author":"Kyle Peacock","license":"ISC"}
+{"name":"test","version":"0.0.8-beta.8","description":"","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1","build":""},"keywords":[],"author":"Kyle Peacock","license":"ISC"}
