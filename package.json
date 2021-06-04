@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "workspaces": {
+    "packages": [
+      "src/packages/**"
+    ]
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier:format": "",
     "build": "",
-    "version": "ts-node version.ts"
+    "version": "ts-node bin/version.ts"
   },
   "keywords": [],
   "author": "Kyle Peacock",
