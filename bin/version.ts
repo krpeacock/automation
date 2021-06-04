@@ -109,25 +109,27 @@ exec(`npm run prettier:format`, (error) => {
     throw new Error(JSON.stringify(error));
   }
 
-  if (argv.publish) {
-    // Publish packages to npm using provided tag
-    console.log("Publishing packages to npm with tag" + argv.tag);
-    exec(
-      `npm publish --workspaces${
-        argv.tag ? ` --tag ${argv.tag}` : ""
-      } --access-public`,
-      (error) => {
-        if (error) {
-          throw new Error(JSON.stringify(error));
+  exec(`git add .; git commit -m "Releases v${newVersion}"`, (error) => {
+    if (argv.publish) {
+      // Publish packages to npm using provided tag
+      console.log("Publishing packages to npm with tag" + argv.tag);
+      exec(
+        `npm publish --workspaces${
+          argv.tag ? ` --tag ${argv.tag}` : ""
+        } --access-public`,
+        (error) => {
+          if (error) {
+            throw new Error(JSON.stringify(error));
+          }
+          // wrap up
+          console.log("success!");
+          console.timeEnd("script duration");
         }
-        // wrap up
-        console.log("success!");
-        console.timeEnd("script duration");
-      }
-    );
-  } else {
-    // wrap up
-    console.log("success!");
-    console.timeEnd("script duration");
-  }
+      );
+    } else {
+      // wrap up
+      console.log("success!");
+      console.timeEnd("script duration");
+    }
+  });
 });
