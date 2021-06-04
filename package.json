@@ -18,9 +18,7 @@
   "author": "Kyle Peacock",
   "license": "ISC",
   "devDependencies": {
-    "ts-node": "^10.0.0"
-  },
-  "dependencies": {
-    "yargs": "^17.0.1"
+    "ts-node": "^10.0.0",
+    "yargs": "^15.4.1"
   }
 }
