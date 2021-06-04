@@ -48,9 +48,9 @@ const newVersion = (() => {
     // else use the immediately following argument
     let customVersion = argv._[0].toString();
 
-    // Strip out "v" if customVersion is passed with one
-    if (customVersion.startsWith("v"))
-      customVersion = customVersion.slice(1, customVersion.length);
+    // Trim start of argument if customVersion is passed via GitHub Tag
+    if (customVersion.startsWith("refs/tags/v"))
+      customVersion = customVersion.replace("refs/tags/v", "");
     return customVersion;
   }
   return [major, minor, patch, ...rest].join(".");
